@@ -1,1 +1,1 @@
-basename -s ".sh" $(find . -name "*.sh") 
+basename $(find . -name "*.sh") | sed 's/.\{3\}$//'

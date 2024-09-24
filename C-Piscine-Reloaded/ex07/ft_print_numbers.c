@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_numbers.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antares <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: eahmeti <eahmeti@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/21 19:29:17 by antares           #+#    #+#             */
-/*   Updated: 2024/09/21 19:39:50 by antares          ###   ########.fr       */
+/*   Created: 2024/09/24 15:31:43 by eahmeti           #+#    #+#             */
+/*   Updated: 2024/09/24 15:33:18 by eahmeti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>

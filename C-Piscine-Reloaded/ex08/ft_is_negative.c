@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_is_negative.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antares <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: eahmeti <eahmeti@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/21 19:40:54 by antares           #+#    #+#             */
-/*   Updated: 2024/09/21 19:50:26 by antares          ###   ########.fr       */
+/*   Created: 2024/09/24 15:33:43 by eahmeti           #+#    #+#             */
+/*   Updated: 2024/09/24 15:33:55 by eahmeti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
