@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_count_if.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eahmeti <eahmeti@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/24 15:37:40 by eahmeti           #+#    #+#             */
-/*   Updated: 2024/09/25 15:29:04 by eahmeti          ###   ########.fr       */
+/*   Created: 2024/09/29 21:40:14 by eahmeti           #+#    #+#             */
+/*   Updated: 2024/09/29 21:42:09 by eahmeti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_sqrt(int nb)
+int	ft_count_if(char **tab, int (*f)(char*))
 {
+	int	c;
 	int	i;
 
-	i = 1;
-	if (nb <= 0)
+	if (!tab)
 		return (0);
-	while ((i * i) < nb)
-		i++;
-	if (i * i == nb)
-		return (i);
-	return (0);
+	c = 0;
+	i = -1;
+	while (tab[++i])
+	{
+		if (f(tab[i]))
+			c++;
+	}
+	return (c);
 }
