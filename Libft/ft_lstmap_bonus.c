@@ -1,40 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eahmeti <eahmeti@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/03 16:49:29 by eahmeti           #+#    #+#             */
-/*   Updated: 2024/10/07 00:11:40 by eahmeti          ###   ########.fr       */
+/*   Created: 2024/10/06 22:01:51 by eahmeti           #+#    #+#             */
+/*   Updated: 2024/10/07 00:09:08 by eahmeti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	char	*substr;
-	size_t	x;
-	size_t	y;
+	t_list	*new_list;
+	t_list	*new_elem;
 
-	x = 0;
-	y = 0;
-	if (!s)
+	if (!lst || !del || !f)
 		return (NULL);
-	if (!s[0] || (size_t)ft_strlen(s) < start)
-		len = 0;
-	else if ((size_t)ft_strlen(s + start) < len)
-		len = ft_strlen(s + start);
-	substr = (char *)malloc(sizeof(char) * (len + 1));
-	if (!substr)
-		return (NULL);
-	while (s[x])
+	new_list = NULL;
+	while (lst)
 	{
-		if (y < len && x >= start)
-			substr[y++] = s[x];
-		x++;
+		new_elem = ft_lstnew((*f)(lst->content));
+		if (!new_elem)
+		{
+			ft_lstclear(&new_list, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&new_list, new_elem);
+		lst = lst->next;
 	}
-	substr[y] = '\0';
-	return (substr);
+	return (new_list);
 }

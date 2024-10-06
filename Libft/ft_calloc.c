@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: eahmeti <eahmeti@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/03 14:30:43 by eahmeti           #+#    #+#             */
-/*   Updated: 2024/10/03 18:42:56 by eahmeti          ###   ########.fr       */
+/*   Created: 2024/10/07 00:06:33 by eahmeti           #+#    #+#             */
+/*   Updated: 2024/10/07 00:06:35 by eahmeti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	unsigned char	*tmp;
+	char	*tmp;
 
-	tmp = malloc(count * size);
+	tmp = malloc(size * count);
 	if (!tmp)
 		return (NULL);
-	ft_bzero(tmp, count);
+	ft_bzero(tmp, count * size);
 	return (tmp);
 }
