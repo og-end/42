@@ -6,7 +6,7 @@
 /*   By: eahmeti <eahmeti@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/06 22:01:51 by eahmeti           #+#    #+#             */
-/*   Updated: 2024/10/07 00:09:08 by eahmeti          ###   ########.fr       */
+/*   Updated: 2024/10/07 12:36:04 by eahmeti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,18 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_list;
 	t_list	*new_elem;
+	void	*content;
 
 	if (!lst || !del || !f)
 		return (NULL);
 	new_list = NULL;
 	while (lst)
 	{
-		new_elem = ft_lstnew((*f)(lst->content));
+		content = f(lst->content);
+		new_elem = ft_lstnew(content);
 		if (!new_elem)
 		{
+			del(content);
 			ft_lstclear(&new_list, del);
 			return (NULL);
 		}
