@@ -1,7 +1,8 @@
 NAME = libftprintf.a
 
-SRCS = src/ft_char.c src/ft_str.c src/ft_printf.c src/ft_decimal.c \
-       src/ft_hexa.c src/ft_pointer.c src/ft_unsigned_decimal.c \
+SRCS = src/ft_char.c	src/ft_str.c		src/ft_printf.c \
+	  src/ft_decimal.c	src/ft_hexa.c		src/ft_pointer.c \
+	  src/ft_unsigned_decimal.c \
 
 OBJS = ${SRCS:.c=.o}
 
