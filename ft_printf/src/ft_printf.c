@@ -6,7 +6,7 @@
 /*   By: eahmeti <eahmeti@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 17:44:59 by eahmeti           #+#    #+#             */
-/*   Updated: 2024/10/13 17:47:04 by eahmeti          ###   ########.fr       */
+/*   Updated: 2024/10/13 23:25:42 by eahmeti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,12 +58,3 @@ int	ft_printf(char const *s, ...)
 	}
 	return (va_end(args), count);
 }
-/*
-int	main()
-{
-	int a = printf("%p\n", "");
-	int b = ft_printf("%p\n", "");
-
-	printf("%d\n", a);
-	printf("%d\n", b);
-}*/
