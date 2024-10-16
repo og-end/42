@@ -6,13 +6,13 @@
 /*   By: eahmeti <eahmeti@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 01:33:25 by eahmeti           #+#    #+#             */
-/*   Updated: 2024/10/13 00:53:55 by eahmeti          ###   ########.fr       */
+/*   Updated: 2024/10/16 14:17:55 by eahmeti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
-int	ft_putnbr_base(unsigned long tmp, char *base)
+static int	ft_putnbr_base(unsigned long tmp, char *base)
 {
 	int	count;
 
