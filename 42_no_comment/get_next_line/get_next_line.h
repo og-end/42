@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eahmeti <eahmeti@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/06 17:42:57 by eahmeti           #+#    #+#             */
-/*   Updated: 2024/10/07 00:09:20 by eahmeti          ###   ########.fr       */
+/*   Created: 2024/10/16 14:24:55 by eahmeti           #+#    #+#             */
+/*   Updated: 2024/10/24 16:39:42 by eahmeti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-int	ft_lstsize(t_list *lst)
-{
-	int	t;
+# include <unistd.h>
+# include <stdlib.h>
 
-	t = 0;
-	while (lst)
-	{
-		t++;
-		lst = lst->next;
-	}
-	return (t);
-}
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
+
+size_t	ft_strlen(const char *s);
+char	*ft_strchr(const char *s, int c);
+char	*ft_strjoin(char *s1, char *s2);
+char	*ft_strdup(const char *s);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*get_next_line(int fd);
+
+#endif

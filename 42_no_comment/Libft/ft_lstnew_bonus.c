@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eahmeti <eahmeti@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/16 14:24:55 by eahmeti           #+#    #+#             */
-/*   Updated: 2024/10/23 20:31:40 by eahmeti          ###   ########.fr       */
+/*   Created: 2024/10/06 15:39:36 by eahmeti           #+#    #+#             */
+/*   Updated: 2024/10/13 02:46:37 by eahmeti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdlib.h>
+t_list	*ft_lstnew(void *content)
+{
+	t_list	*element;
 
-size_t	ft_strlen(const char *s);
-char	*ft_strchr(const char *s, int c);
-char	*ft_strjoin(char *s1, char *s2);
-char	*ft_strdup(const char *s);
-char	*ft_substr(char const *s, unsigned int start, size_t len);
-char	*get_next_line(int fd);
-
-#endif
+	element = malloc(sizeof(t_list));
+	if (!element)
+		return (NULL);
+	element->content = content;
+	element->next = NULL;
+	return (element);
+}

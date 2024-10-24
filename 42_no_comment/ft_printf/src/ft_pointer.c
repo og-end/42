@@ -6,21 +6,17 @@
 /*   By: eahmeti <eahmeti@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 01:33:25 by eahmeti           #+#    #+#             */
-/*   Updated: 2024/10/16 14:17:55 by eahmeti          ###   ########.fr       */
+/*   Updated: 2024/10/23 18:13:13 by eahmeti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
-static int	ft_putnbr_base(unsigned long tmp, char *base)
+static void	ft_putnbr_base(unsigned long tmp, char *base)
 {
-	int	count;
-
-	count = 0;
 	if (tmp >= 16)
 		ft_putnbr_base(tmp / 16, base);
-	count += write(1, &base[tmp % 16], 1);
-	return (count);
+	write(1, &base[tmp % 16], 1);
 }
 
 int	ft_pointer(void *ptr)

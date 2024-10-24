@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eahmeti <eahmeti@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/06 17:22:05 by eahmeti           #+#    #+#             */
-/*   Updated: 2024/10/07 00:08:24 by eahmeti          ###   ########.fr       */
+/*   Created: 2024/10/03 01:45:07 by eahmeti           #+#    #+#             */
+/*   Updated: 2024/10/23 16:31:53 by eahmeti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+char	*ft_strchr(const char *s, int c)
 {
-	if (lst && new)
+	int	i;
+
+	i = 0;
+	while (s[i])
 	{
-		new->next = *lst;
-		*lst = new;
+		if (s[i] == (unsigned char)c)
+			return ((char *)&s[i]);
+		i++;
 	}
+	if ((unsigned char)c == '\0')
+		return ((char *)&s[i]);
+	return (NULL);
 }

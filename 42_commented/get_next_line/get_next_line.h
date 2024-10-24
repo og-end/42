@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eahmeti <eahmeti@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/03 01:45:07 by eahmeti           #+#    #+#             */
-/*   Updated: 2024/10/07 00:10:23 by eahmeti          ###   ########.fr       */
+/*   Created: 2024/10/24 14:56:31 by eahmeti           #+#    #+#             */
+/*   Updated: 2024/10/24 17:01:30 by eahmeti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-char	*ft_strchr(const char *s, int c)
-{
-	int	i;
+# include <unistd.h>
+# include <stdlib.h>
 
-	i = 0;
-	while (s[i])
-	{
-		if (s[i] == (unsigned char)c)
-			return ((char *)&s[i]);
-		i++;
-	}
-	if ((unsigned char)c == '\0')
-		return ((char *)&s[i]);
-	return (NULL);
-}
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
+
+size_t	ft_strlen(const char *s);
+char	*ft_strjoin(char *s1, char *s2);
+char	*ft_strdup(const char *s);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strchr(const char *s, int c);
+char	*get_next_line(int fd);
+
+#endif
