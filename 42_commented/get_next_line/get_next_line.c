@@ -6,7 +6,7 @@
 /*   By: eahmeti <eahmeti@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 15:07:00 by eahmeti           #+#    #+#             */
-/*   Updated: 2024/10/24 23:01:16 by eahmeti          ###   ########.fr       */
+/*   Updated: 2024/10/24 23:33:43 by eahmeti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 
 			//	ft_process_line va garder tout ce qu'il
-			//	y a avant le \n et en former une chaine
+			//	y a avant le \n (inclus si il s'y trouve)
+			//	elle retourne une nouvelle chaine
 			//	de caractere se terminant par \0.
 
 
@@ -63,14 +64,14 @@ static char	*ft_process_line(char *content)
 
 
 
+
+
 			//	ft_remaining va check si il reste quelque
 			//	chose apres le /n.
 			//	si il reste quelque chose, alors il va
 			//	le stocker dans une nouvelle chaine de
 			//	caractere, la terminer par un \0
 			//	et la return.
-
-
 
 
 static char	*ft_remaining(char *content)
@@ -107,6 +108,8 @@ static char	*ft_remaining(char *content)
 
 
 
+
+
 			//	corps principal de la fonction GNL.
 			//	declarer un static char *reste
 			//	celle-ci conserve son contenu entre
@@ -121,8 +124,6 @@ static char	*ft_remaining(char *content)
 			//	caractere jusqu'a la premiere occurence
 			//	du \n. c'est ce line qui va ensuite etre 
 			//	retourner.
-
-
 
 
 char	*get_next_line(int fd)
